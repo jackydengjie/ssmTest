@@ -16,8 +16,9 @@ public class VoteuserServiceImpl implements VoteuserService {
     @Override
     public List<Voteuser> findAll() {
         System.out.println("VoteuserServiceImpl方法执行");
+        List<Voteuser> list=voteuserMapper.findAll();
 
-        return voteuserMapper.findAll();
+        return list;
     }
 
     public VoteuserMapper getVoteuserMapper() {

@@ -17,13 +17,13 @@ public class VoteuserController {
     @Resource
     private VoteuserService voteuserService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/list")
     public String toIndedx(Model model){
         System.out.println("进入CONTROLLER方法");
-        System.out.println("model = " + model);
         List<Voteuser> list= voteuserService.findAll();
+        System.out.println(list);
         model.addAttribute("list", list);
-
+        System.out.println("model = " + model);
         return "index";
 
 
