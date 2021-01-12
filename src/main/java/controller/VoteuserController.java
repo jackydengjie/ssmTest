@@ -17,7 +17,7 @@ public class VoteuserController {
     @Resource
     private VoteuserService voteuserService;
 
-    @RequestMapping("/list")
+    @RequestMapping("/index")
     public String toIndedx(Model model){
         System.out.println("进入CONTROLLER方法");
         List<Voteuser> list= voteuserService.findAll();
