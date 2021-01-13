@@ -4,4 +4,7 @@
     <select id="findAll" resultType="entity.Voteuser">
 		select * from voteuser
 	</select>
+	<select id="chayonghu" resultType="entity.Voteuser">
+		SELECT * FROM voteuser WHERE uname=#{uname}
+	</select>
 </mapper>

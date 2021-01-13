@@ -15,10 +15,19 @@ public class VoteuserServiceImpl implements VoteuserService {
 
     @Override
     public List<Voteuser> findAll() {
-        System.out.println("VoteuserServiceImpl方法执行");
+        System.out.println("VoteuserServiceImpl的findAll方法执行");
         List<Voteuser> list=voteuserMapper.findAll();
 
         return list;
+    }
+
+    @Override
+    public Voteuser chayonghu(String uname) {
+        System.out.println("VoteuserServiceImpl的chayonghu方法执行");
+        Voteuser chayonghu = voteuserMapper.chayonghu(uname);
+
+
+        return chayonghu;
     }
 
     public VoteuserMapper getVoteuserMapper() {
