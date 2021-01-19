@@ -19,12 +19,29 @@ public class VoteuserController {
 
     @RequestMapping("/index")
     public String toIndedx(Model model){
-        System.out.println("进入CONTROLLER方法");
+        System.out.println("进入CONTROLLER的toIndedx方法");
         List<Voteuser> list= voteuserService.findAll();
         System.out.println(list);
         model.addAttribute("list", list);
         System.out.println("model = " + model);
         return "index";
+
+
+    }
+
+    @RequestMapping("/toChayonghu")
+    public String toChayonghu(String uname, Model model){
+        System.out.println("进入CONTROLLER的toChayonghu方法");
+        Voteuser voteuser= voteuserService.chayonghu(uname);
+        System.out.println(voteuser);
+        if (voteuser == null){
+            System.out.println("结果为空");
+            return null;
+        }else {
+            System.out.println("查找结果是:"+voteuser);
+            model.addAttribute("voteuser",voteuser);
+            return "toChayonghu";
+        }
 
 
     }
