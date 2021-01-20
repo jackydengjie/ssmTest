@@ -1,5 +1,6 @@
 package controller;
 
+import entity.Toupiao;
 import entity.Voteuser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
