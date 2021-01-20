@@ -9,7 +9,7 @@
 <head>
     <base href="<%=basePath%>">
 
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'toChayonghu.jsp' starting page</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
@@ -18,10 +18,17 @@
     <!--
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
+
 </head>
 
 
 <body>
-${voteuser.uname}
+<c:if test="${voteuser.uname==null}">没有此用户</c:if>
+<c:if test="${!voteuser.uname}">${voteuser.uname}</c:if>
+
+<c:choose>
+    <c:when test="${voteuser.uname==null}">找不到此用户</c:when>
+    <c:otherwise>${voteuser.uname}</c:otherwise>
+</c:choose>
 </body>
 </html>
