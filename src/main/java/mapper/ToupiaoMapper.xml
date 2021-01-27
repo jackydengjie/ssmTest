@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.ToupiaoMapper">
     <!-- parameterType参数类型用于有输入参数时存入数据库时设置  -->
-    <insert id="savePs" parameterType="entity.Toupiao">
-        insert into toupiao(uname,piaoshu) values (#{uname},#{piaoshu})
+    <insert id="savePs" parameterType="String">
+        insert into toupiao(uname) values (#{uname})
 
     </insert>
 

@@ -4,7 +4,15 @@ public class Toupiao {
     private String uanme;
     private Integer piaoshu;
 
-       public String getUanme() {
+    public Toupiao() {
+    }
+
+    public Toupiao(String uanme,Integer piaoshu) {
+        this.uanme = uanme;
+        this.piaoshu = piaoshu;
+    }
+
+    public String getUanme() {
         return uanme;
     }
 

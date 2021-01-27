@@ -8,7 +8,7 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<form action="${pageContext.request.contextPath}/toChayonghu" method="post">
+<form action="${pageContext.request.contextPath}/toSavePs" method="post">
     <table>
         <tr>
             <td>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>
-                <input type="submit" id="regist" value="查找">
+                <input type="submit" id="regist" value="注册">
             </td>
         </tr>
     </table>

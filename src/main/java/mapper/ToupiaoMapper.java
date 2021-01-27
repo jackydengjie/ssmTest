@@ -6,5 +6,9 @@ import java.util.List;
 
 public interface ToupiaoMapper {
 
-    public void savePs(Toupiao toupiao);
+    public List<Toupiao> findAll();
+
+
+
+    public String savePs(String uname);
 }
