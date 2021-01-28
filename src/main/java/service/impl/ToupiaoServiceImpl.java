@@ -16,9 +16,9 @@ public class ToupiaoServiceImpl implements ToupiaoService {
 
 
     @Override
-    public String savePs(String uname) {
+    public int savePs(String uname) {
         System.out.println("ToupiaoServiceImpl的savePs方法执行savePs");
-        String i =toupiaoMapper.savePs(uname);
+        int i =toupiaoMapper.savePs(uname);
         return i;
     }
 }

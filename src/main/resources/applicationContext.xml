@@ -19,6 +19,9 @@
         <property name="url" value="${url}"></property>
         <property name="username" value="${uname}"></property>
         <property name="password" value="${pwd}"></property>
+        <property name="testOnBorrow" value="true" />
+        <property name="testOnReturn" value="false" />
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
     </bean>
     <!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory"  class="org.mybatis.spring.SqlSessionFactoryBean">

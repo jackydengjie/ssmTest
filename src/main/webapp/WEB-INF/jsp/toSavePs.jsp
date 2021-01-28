@@ -24,8 +24,9 @@
 
 
 
-<c:if test="${fanhuei==null}">没有此用户</c:if>
-<c:if test="${!fanhuei==null}">成功</c:if>
+
+<c:if test="${fanhuei==1}">没有此用户</c:if>
+<c:if test="${!fanhuei==1}">成功</c:if>
 
 
 </body>

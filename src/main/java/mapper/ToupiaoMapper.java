@@ -10,5 +10,5 @@ public interface ToupiaoMapper {
 
 
 
-    public String savePs(String uname);
+    public int savePs(String uname);
 }

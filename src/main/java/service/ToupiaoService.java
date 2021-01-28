@@ -4,5 +4,5 @@ import entity.Toupiao;
 
 public interface ToupiaoService {
 
-    public String savePs(String uname);
+    public int savePs(String uname);
 }

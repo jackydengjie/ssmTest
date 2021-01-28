@@ -12,26 +12,19 @@ import javax.annotation.Resource;
 
 @Controller
 public class ToupiaoController {
-    public ToupiaoService getToupiaoService() {
-        return toupiaoService;
-    }
-
-    public void setToupiaoService(ToupiaoService toupiaoService) {
-        this.toupiaoService = toupiaoService;
-    }
 
     @Resource
     private ToupiaoService toupiaoService;
 
     @RequestMapping("/toSavePs")
     @ResponseBody
-    public String savePs(String uname,Model model){
+    public int savePs(String uname,Model model){
         System.out.println("ToupiaoController的savePs方法执行");
-        String fanhuei = toupiaoService.savePs(uname);
+        int fanhuei = toupiaoService.savePs(uname);
         System.out.println("fanhuei值是"+fanhuei);
-        if (fanhuei==null){
+        if (fanhuei==0){
             System.out.println("执行返回值为NULL");
-            return "toSavePs";
+            return fanhuei;
         }else {
             //model.addAttribute("fanhuei",fanhuei);
             //System.out.println("model = " + model);
