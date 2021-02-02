@@ -18,16 +18,10 @@
     <!--
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
-
 </head>
 <body>
-
-
-
-
-<c:if test="${fanhuei==1}">没有此用户</c:if>
-<c:if test="${!fanhuei==1}">成功</c:if>
-
+<c:if test="${requestScope.zhi==null}">没有此用户</c:if>
+<c:if test="${requestScope.zhi!=null}">成功</c:if>
 
 </body>
 </html>

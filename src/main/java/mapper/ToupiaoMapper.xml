@@ -2,10 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.ToupiaoMapper">
     <!-- parameterType参数类型用于有输入参数时存入数据库时设置  -->
+    <!--新增投票人-->
     <insert id="savePs" parameterType="String">
         insert into toupiao(uname) values (#{uname})
-
     </insert>
 
+    <!--查找是否已有投票人名-->
+    <select id="renmin" resultType="entity.Toupiao">
+		SELECT * FROM voteuser WHERE uname=#{uname}
+	</select>
+
+    <!--更新票数-->
+    <update id="update" parameterType="user">
+    UPDATE toupiao SET piaoshu=#{ps} WHERE uname=#{uname}
+    </update>
 
 </mapper>
