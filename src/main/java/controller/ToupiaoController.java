@@ -54,10 +54,13 @@ public class ToupiaoController {
                 return "错误";
             }else {
                 request.setAttribute("zhi",zhi);
-                return "SavePs";
+                return "savePs";
             }
         }else {
-            int fanhuei=toupiaoService.uppiaosu(toupiao.getPiaoshu(),toupiao.getUanme());
+            int i=toupiao.getPiaoshu()+1;
+            System.out.println("i值是:"+i);
+            String q=Integer.toString(i);
+            int fanhuei=toupiaoService.uppiaosu(q,toupiao.getUanme());
             if (fanhuei==0){
                 System.out.println("执行返回值为NULL");
                 return "错误";
@@ -66,7 +69,7 @@ public class ToupiaoController {
                 System.out.println("fanhuei值是"+fanhuei);
                 System.out.println("zhi值是:"+zhi);
                 request.setAttribute("zhi",zhi);
-                return "SavePs";
+                return "savePs";
             }
 
         }

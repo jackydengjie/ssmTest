@@ -9,11 +9,11 @@
 
     <!--查找是否已有投票人名-->
     <select id="renmin" resultType="entity.Toupiao">
-		SELECT * FROM voteuser WHERE uname=#{uname}
+		SELECT * FROM toupiao WHERE uname=#{uname}
 	</select>
 
     <!--更新票数-->
-    <update id="update" parameterType="user">
+    <update id="uppiaosu" parameterType="entity.Toupiao">
     UPDATE toupiao SET piaoshu=#{ps} WHERE uname=#{uname}
     </update>
 

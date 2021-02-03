@@ -1,23 +1,23 @@
 package entity;
 
 public class Toupiao {
-    private String uanme;
+    private String uname;
     private Integer piaoshu;
 
     public Toupiao() {
     }
 
-    public Toupiao(String uanme,Integer piaoshu) {
-        this.uanme = uanme;
+    public Toupiao(String uname,Integer piaoshu) {
+        this.uname = uname;
         this.piaoshu = piaoshu;
     }
 
     public String getUanme() {
-        return uanme;
+        return uname;
     }
 
-    public void setUanme(String uanme) {
-        this.uanme = uanme;
+    public void setUanme(String uname) {
+        this.uname = uname;
     }
 
     public Integer getPiaoshu() {
@@ -31,7 +31,7 @@ public class Toupiao {
     @Override
     public String toString() {
         return "Toupiao{" +
-                "uanme='" + uanme + '\'' +
+                "uanme='" + uname + '\'' +
                 ", piaoshu=" + piaoshu +
                 '}';
     }
