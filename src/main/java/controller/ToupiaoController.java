@@ -7,11 +7,15 @@ import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.ToupiaoService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ToupiaoController {
@@ -74,6 +78,16 @@ public class ToupiaoController {
 
         }
 
+    }
+
+    @RequestMapping(path = "/getUser",method = RequestMethod.POST)
+    @ResponseBody
+    public String getUser(@RequestParam Map map){
+        for (Object map1:map.values()
+             ) {
+            System.out.println(map1);
+        }
+        return "getUser";
     }
 
 }

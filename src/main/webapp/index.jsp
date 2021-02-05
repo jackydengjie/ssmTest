@@ -19,8 +19,12 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
     <meta charset="utf-8" />
-    <script>
+    <%--<script src="src/main/webapp/WEB-INF/js/jquery-3.5.1.min.js">
+    </script>--%>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
         function submit() {
+            alert("开始")
             $.modal.loading($("#btnSubmit").data("loading"));
             var uname1 = $("input[name='uname1']").val();
             var uname2 = $("input[name='uname2']").val();
@@ -40,11 +44,9 @@
             });
         }
     </script>
-
-
 </head>
 <body>
-<h2>Hello World!</h2>
+<%--<h2>Hello World!</h2>
 <form action="${pageContext.request.contextPath}/savePs" method="post">
     <table>
         <tr>
@@ -69,16 +71,16 @@
         </tr>
     </table>
 
+</form>--%>
+
+<form action="${pageContext.request.contextPath}/getUser" method="post">
+    <tr><td><input type="text"  name="uname1" id="uname1" value="1" /></td></tr>
+    <tr><td><input type="text"  name="uname2" id="uname2" value="2" /></td></tr>
+    <tr><td><input type="text"  name="uname3" id="uname3" value="3" /></td></tr>
+    <tr><td><input type="submit"  id="regist" value="投票" /></td></tr>
 </form>
 
-<div>
-    <form id="mainForm" autocomplete="off">
-        <input type="text" name="uname1" class="uname1" placeholder="uname1" maxlength="20" />
-        <input type="text" name="uname2" class="uname2" placeholder="uname2" maxlength="20" />
-        <input type="text" name="uname3" class="uname3" placeholder="uname3" maxlength="20" />
-        <button class="btn btn-success btn-block" id="btnSubmit" data-loading="正在提交，请稍后...">提交</button>
-    </form>
-</div>
+
 
 
 </body>
