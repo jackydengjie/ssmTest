@@ -19,9 +19,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     -->
     <meta charset="utf-8" />
-    <%--<script src="src/main/webapp/WEB-INF/js/jquery-3.5.1.min.js">
-    </script>--%>
-    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    <script src="src/main/webapp/WEB-INF/js/jquery-3.5.1.min.js"></script>
+
+    <%--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>--%>
     <script type="text/javascript">
         function submit() {
             alert("开始")

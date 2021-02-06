@@ -82,10 +82,53 @@ public class ToupiaoController {
 
     @RequestMapping(path = "/getUser",method = RequestMethod.POST)
     @ResponseBody
-    public String getUser(@RequestParam Map map){
+    public String getUser(@RequestParam Map map,HttpServletRequest request){
+        System.out.println("ToupiaoController的save方法执行");
         for (Object map1:map.values()
              ) {
-            System.out.println(map1);
+            System.out.println("map1的值是："+map1);
+            if(map1!=""){
+                String uname=(String)(map1);
+                System.out.println("uname的值是："+uname);
+                Toupiao toupiao=toupiaoService.renmin(uname);
+                if (toupiao==null){
+                    System.out.println("没查找到同名");
+                    int fanhuei = toupiaoService.savePs(uname);
+                    String zhi=Integer.toString(fanhuei);
+                    System.out.println("fanhuei值是"+fanhuei);
+                    System.out.println("zhi值是:"+zhi);
+                    if (zhi.equals(0)){
+                        System.out.println("执行返回值为NULL");
+                        return "错误";
+                    }else {
+                        request.setAttribute("zhi",zhi);
+                        /*return "savePs";*/
+                    }
+                }else {
+                    int i=toupiao.getPiaoshu()+1;
+                    System.out.println("i值是:"+i);
+                    String q=Integer.toString(i);
+                    int fanhuei=toupiaoService.uppiaosu(q,toupiao.getUanme());
+                    if (fanhuei==0){
+                        System.out.println("执行返回值为NULL");
+                        return "错误";
+                    }else {
+                        String zhi=Integer.toString(fanhuei);
+                        System.out.println("fanhuei值是"+fanhuei);
+                        System.out.println("zhi值是:"+zhi);
+                        request.setAttribute("zhi",zhi);
+                        /*return "savePs";*/
+                    }
+
+                }
+            }else if(map1!=null){
+                System.out.println("map1的值为null");
+                System.out.println("map1的值为null");
+                System.out.println("map1的值为null");
+                System.out.println("map1的值为null");
+                System.out.println("map1的值为null");
+
+            }
         }
         return "getUser";
     }
