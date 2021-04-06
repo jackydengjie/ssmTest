@@ -1,6 +1,7 @@
 package service.impl;
 
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import entity.Toupiao;
 import mapper.ToupiaoMapper;
 import org.apache.ibatis.annotations.Param;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import service.ToupiaoService;
 
 import javax.annotation.Resource;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.List;
 
 @Service
@@ -43,4 +45,16 @@ public class ToupiaoServiceImpl implements ToupiaoService {
         int i =toupiaoMapper.savePs(uname);
         return i;
     }
+
+    @Override
+    public int saveMac(String macaddress) {
+        System.out.println("ToupiaoServiceImpl的savePs方法执行saveMac");
+        System.out.println("macaddress的值是:"+macaddress);
+        int mac=toupiaoMapper.saveMac(macaddress);
+        System.out.println(mac);
+        return mac;
+
+    }
+
+
 }

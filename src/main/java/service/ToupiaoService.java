@@ -17,4 +17,7 @@ public interface ToupiaoService {
 
     public int savePs(String uname);
 
+    //保存已投票的网卡MAC地址
+    public int saveMac(String macaddress);
+
 }

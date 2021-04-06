@@ -17,4 +17,9 @@
     UPDATE toupiao SET piaoshu=#{ps} WHERE uname=#{uname}
     </update>
 
+    <!--保存已投票的网卡MAC地址-->
+    <insert id="saveMac" parameterType="String">
+        insert into address(macaddress) VALUES (#{macaddress})
+    </insert>
+
 </mapper>
