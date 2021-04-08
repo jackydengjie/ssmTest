@@ -1,7 +1,6 @@
 package service.impl;
 
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import entity.Toupiao;
 import mapper.ToupiaoMapper;
 import org.apache.ibatis.annotations.Param;
@@ -9,8 +8,7 @@ import org.springframework.stereotype.Service;
 import service.ToupiaoService;
 
 import javax.annotation.Resource;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.util.List;
+
 
 @Service
 public class ToupiaoServiceImpl implements ToupiaoService {

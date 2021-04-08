@@ -25,7 +25,7 @@ public class AddressMapperController {
         System.out.println("remotehost:"+remotehost);
         GetMACAddress gmac= new GetMACAddress();
         String mac=gmac.getMac(remoteAddr);
-        int macadd=addressService.saveMac(mac);
+        int macadd=addressService.saveMac(mac,remoteAddr);
         System.out.println(macadd);
 
 

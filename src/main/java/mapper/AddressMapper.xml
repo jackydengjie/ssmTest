@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.ToupiaoMapper">
+<mapper namespace="mapper.AddressMapper">
     <!-- parameterType参数类型用于有输入参数时存入数据库时设置  -->
     <!--保存已投票的网卡MAC地址-->
-    <insert id="saveMac" parameterType="String">
-        insert into address(macaddress) VALUES (#{macaddress})
+    <insert id="saveMac" parameterType="String" >
+        insert into address(macaddress,ipaddress) VALUES (#{macaddress},#{ipaddress})
     </insert>
+
+   <!-- 查找是否有相同的mac地址-->
+    <!-- resultType参数类型用于数据库取值时时设置  -->
+    <select id="allMac" resultType="entity.Address">
+		select * from address
+	</select>
+
+
 
 
 </mapper>
