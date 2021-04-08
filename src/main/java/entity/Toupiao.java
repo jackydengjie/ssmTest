@@ -3,7 +3,7 @@ package entity;
 public class Toupiao {
     private String uname;
     private Integer piaoshu;
-    private String Mac;
+
 
     public Toupiao() {
     }
@@ -24,18 +24,11 @@ public class Toupiao {
         this.piaoshu = piaoshu;
     }
 
-    public String getMac() {
-        return Mac;
-    }
 
-    public void setMac(String mac) {
-        Mac = mac;
-    }
-
-    public Toupiao(String uname, Integer piaoshu, String mac) {
+    public Toupiao(String uname, Integer piaoshu) {
         this.uname = uname;
         this.piaoshu = piaoshu;
-        Mac = mac;
+
     }
 
     @Override
@@ -43,7 +36,6 @@ public class Toupiao {
         return "Toupiao{" +
                 "uname='" + uname + '\'' +
                 ", piaoshu=" + piaoshu +
-                ", Mac='" + Mac + '\'' +
                 '}';
     }
 }

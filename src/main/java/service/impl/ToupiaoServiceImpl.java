@@ -46,15 +46,7 @@ public class ToupiaoServiceImpl implements ToupiaoService {
         return i;
     }
 
-    @Override
-    public int saveMac(String macaddress) {
-        System.out.println("ToupiaoServiceImpl的savePs方法执行saveMac");
-        System.out.println("macaddress的值是:"+macaddress);
-        int mac=toupiaoMapper.saveMac(macaddress);
-        System.out.println(mac);
-        return mac;
 
-    }
 
 
 }
