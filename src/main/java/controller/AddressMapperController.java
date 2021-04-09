@@ -9,6 +9,8 @@ import util.GetMACAddress;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Controller
 public class AddressMapperController {
@@ -18,15 +20,25 @@ public class AddressMapperController {
 
     @RequestMapping(path = "/getLocalIp",method = RequestMethod.POST)
     @ResponseBody
-    public void getLocalIp(HttpServletRequest request){
+    public void getLocalIp(HttpServletRequest request) throws UnknownHostException {
+        InetAddress address = InetAddress.getLocalHost();
+        System.out.println("address.getHostAddress的值是："+address.getHostAddress());
+        System.out.println("address.getAddress的值是："+address.getAddress());
         String remoteAddr = request.getRemoteAddr();
         System.out.println("remoteAddr:"+remoteAddr);
         String remotehost = request.getRemoteHost();
         System.out.println("remotehost:"+remotehost);
+        InetAddress cname=InetAddress.getByName(remoteAddr);
+        String cname2=cname.toString();
+        System.out.println("cname2的值是"+cname2);
         GetMACAddress gmac= new GetMACAddress();
         String mac=gmac.getMac(remoteAddr);
-        int macadd=addressService.saveMac(mac,remoteAddr);
+
+        int macadd=addressService.saveMac(mac,remoteAddr,cname2);
         System.out.println(macadd);
+
+
+
 
 
 

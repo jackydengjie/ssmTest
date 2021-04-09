@@ -4,7 +4,7 @@
     <!-- parameterType参数类型用于有输入参数时存入数据库时设置  -->
     <!--保存已投票的网卡MAC地址-->
     <insert id="saveMac" parameterType="String" >
-        insert into address(macaddress,ipaddress) VALUES (#{macaddress},#{ipaddress})
+        insert into address(macaddress,ipaddress,cname) VALUES (#{macaddress},#{ipaddress},#{cname})
     </insert>
 
    <!-- 查找是否有相同的mac地址-->

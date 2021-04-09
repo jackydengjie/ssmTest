@@ -77,6 +77,8 @@
 
 </form>--%>
 <%
+
+    /*out.print(macaddress);*/
    /* GetMACAddress gmac=new GetMACAddress(); *//*创建一个util包下GetMACAddress.java文件的对象*//*
     String os=gmac.getOSName();
     System.out.println(os);

@@ -1,6 +1,7 @@
 package service.impl;
 
 import mapper.AddressMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import service.AddressService;
 
@@ -13,11 +14,12 @@ public class AddressServiceImpl implements AddressService {
     private AddressMapper addressMapper;
 
     @Override
-    public int saveMac(String macaddress,String ipaddress) {
+    public int saveMac(@Param("macaddress") String macaddress, @Param("ipaddress") String ipaddress,@Param("cname") String cname) {
         System.out.println("ToupiaoServiceImpl的savePs方法执行saveMac");
         System.out.println("macaddress的值是:"+macaddress);
         System.out.println("ipaddress的值是：" + ipaddress);
-        int mac=addressMapper.saveMac(macaddress,ipaddress);
+        System.out.println("cname的值是："+cname);
+        int mac=addressMapper.saveMac(macaddress,ipaddress,cname);
         System.out.println(mac);
         return mac;
 
