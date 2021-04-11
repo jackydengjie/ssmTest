@@ -1,5 +1,6 @@
 package controller;
 
+import entity.Address;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,26 +22,27 @@ public class AddressMapperController {
     @RequestMapping(path = "/getLocalIp",method = RequestMethod.POST)
     @ResponseBody
     public void getLocalIp(HttpServletRequest request) throws UnknownHostException {
+        System.out.println("------------------------------------------------------");
         InetAddress address = InetAddress.getLocalHost();
-        System.out.println("address.getHostAddress的值是："+address.getHostAddress());
-        System.out.println("address.getAddress的值是："+address.getAddress());
+        String cname=address.getHostName();
         String remoteAddr = request.getRemoteAddr();
-        System.out.println("remoteAddr:"+remoteAddr);
         String remotehost = request.getRemoteHost();
-        System.out.println("remotehost:"+remotehost);
-        InetAddress cname=InetAddress.getByName(remoteAddr);
-        String cname2=cname.toString();
-        System.out.println("cname2的值是"+cname2);
         GetMACAddress gmac= new GetMACAddress();
         String mac=gmac.getMac(remoteAddr);
-
-        int macadd=addressService.saveMac(mac,remoteAddr,cname2);
-        System.out.println(macadd);
-
-
-
-
-
+        System.out.println("mac的值是:"+mac);
+        Address back=addressService.smac(mac);
+        if (back==null){
+            System.out.println("调用savemac方法");
+            int macadd=addressService.saveMac(mac,remoteAddr,cname);
+            System.out.println(macadd);
+        }else {
+            String maca=back.getMacAddress();
+            if (mac.equals(maca)){
+                System.out.println("已有相同MAC地址");
+            }else {
+                System.out.println("===========");
+            }
+        }
 
  /*       byte[] bytes = remoteAddr.getBytes();
         String[] split = remoteAddr.split("\\.");

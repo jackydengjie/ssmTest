@@ -1,6 +1,7 @@
 package mapper;
 
 import entity.Address;
+
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,5 +12,7 @@ public interface AddressMapper {
 
 
     //查找是否有相同的mac地址
-    public List<Address> allMac();
+    public Address  smac(String maca);
+
+
 }

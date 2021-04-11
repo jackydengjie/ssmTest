@@ -9,8 +9,8 @@
 
    <!-- 查找是否有相同的mac地址-->
     <!-- resultType参数类型用于数据库取值时时设置  -->
-    <select id="allMac" resultType="entity.Address">
-		select * from address
+    <select id="smac" resultType="entity.Address">
+		SELECT * FROM address WHERE macaddress=#{maca}
 	</select>
 
 

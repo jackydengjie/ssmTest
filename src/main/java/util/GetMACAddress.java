@@ -13,6 +13,7 @@ import java.net.NetworkInterface;
 public class GetMACAddress {
 
     public  String getMac(String ip){
+        System.out.println("+++++++++++++++++++++++++++++++++++++++");
         String str = null;
         String mac = null;
         try{
@@ -28,7 +29,6 @@ public class GetMACAddress {
                     }
                 }
             }
-            System.out.println(mac);
         }catch(IOException e){
             e.printStackTrace();
         }
